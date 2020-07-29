@@ -1,0 +1,8 @@
+#环境搭建步骤
+1：
+git clone https://github.com/xianghu1994/hurlr_dex.git
+
+2:qemu 
+sudo apt-get install qemu
+sudo apt-get install qemu-system-x86
+sudo ln /usr/bin/qemu-system-i386 /usr/bin/qemu
