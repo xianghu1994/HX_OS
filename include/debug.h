@@ -3,17 +3,17 @@
 
 #include "console.h"
 #include "vargs.h"
-#include "elf.h"
+//#include "elf.h"
 
-#define assert(x, info)
-	do{
-		if(!(x)){
-			panic(info);
-		}
+#define assert(x, info)		\
+	do{						\
+		if(!(x)){			\
+			panic(info);	\
+		}					\
 	}while(0)
 
 
-#define static_assert(x) 
+#define static_assert(x) 	\
 	switch(x){case 0: case (x): ;}
 
 void init_debug();

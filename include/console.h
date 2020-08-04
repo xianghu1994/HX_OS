@@ -7,7 +7,8 @@ typedef enum real_color {
 	rc_blue = 1,
 	rc_green = 2,
 	rc_cyan = 3,
-	rc_read = 4
+	rc_read = 4,
+	rc_white = 15
 }real_color_t;
 
 void console_clear();

@@ -82,6 +82,13 @@ void console_putc_color(char c, real_color_t back, real_color_t fore)
 	move_cursor();
 }
 
+void console_write(char *cstr)
+{
+	while (*cstr){
+		console_putc_color(*cstr++, rc_black, rc_white);
+	}
+}
+
 void console_write_color(char *cstr, real_color_t back, real_color_t fore)
 {
 	while (*cstr){
