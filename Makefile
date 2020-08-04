@@ -43,4 +43,8 @@ update_image:
 qemu:
 	qemu -fda floppy.img -boot a
 
-
+.PHONY:debug
+debug:
+	qemu -S -s -fda floppy.img -boot a &
+	sleep 1
+	cgdb -x scripts/gdbinit
