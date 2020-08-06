@@ -27,7 +27,7 @@ static void scroll()
 			video_memory[i] = video_memory[i+80];
 		}
 
-		for (i = 0 * 80; i < 24 * 80; i++){
+		for (i = 24 * 80; i < 25 * 80; i++){
 			video_memory[i] = blank;
 		}
 
@@ -37,7 +37,7 @@ static void scroll()
 
 void console_clear()
 {
-	uint8_t attribute_byte = (0 << 4) | (15 & 0XF);
+	uint8_t attribute_byte = (0 << 4) | (15 & 0X0F);
 	uint16_t blank = 0x20 | (attribute_byte << 8);
 	
 	int i;
@@ -55,12 +55,12 @@ void console_putc_color(char c, real_color_t back, real_color_t fore)
 	uint8_t back_color = (uint8_t)back;
 	uint8_t fore_color = (uint8_t)fore;
 
-	uint8_t attribute_byte_color = (back_color << 4) | (fore_color & 0XF);
+	uint8_t attribute_byte_color = (back_color << 4) | (fore_color & 0X0F);
 	uint16_t attribute = attribute_byte_color << 8;
 
 	if (c == 0x08 && cursor_x){
 		cursor_x --;
-	} else if (c == 0x9) {
+	} else if (c == 0x09) {
 		cursor_x = (cursor_x + 8) & ~(8-1);
 	} else if (c == '\r') {
 		cursor_x = 0;

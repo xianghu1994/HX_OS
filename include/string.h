@@ -19,10 +19,14 @@ static inline void bzero(void *dest, uint32_t len)
 	memset(dest, 0, len);
 }
 
-static inline int strcmp()
+static inline int strcmp(const char *str1, const char *str2)
 {
+	while (*str1 && *str2 && (*str1 == *str2)){
+		str1++;
+		str2++;
+	}
 
-	return 0;
+	return *str1 - *str2;
 }
 
 static inline char *strcpy(char *dest, const char *src)

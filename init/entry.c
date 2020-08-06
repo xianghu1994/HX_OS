@@ -1,11 +1,17 @@
 #include "console.h"
+#include "debug.h"
 
 int kern_entry()
 {
-	console_clear();
+	init_debug();
 
-	console_write_color("Hello, World!\n",rc_black, rc_green);
-	
-	printk("aoaoao\n");
+	console_clear();
+	int i = 0;
+	printk("test:%d",i);
+	printk("Hello World\n");
+	printk("Hello World2\n");
+
+	panic("test");
+
 	return 0;
 }

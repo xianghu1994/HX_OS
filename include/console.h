@@ -15,7 +15,7 @@ void console_clear();
 
 void console_putc_color(char c, real_color_t back, real_color_t fore);
 
-//void console_write(char *cstr);
+void console_write(char *cstr);
 
 void console_write_color(char *cstr, real_color_t back, real_color_t fore);
 
