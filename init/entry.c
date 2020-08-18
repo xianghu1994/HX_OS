@@ -1,15 +1,14 @@
 #include "console.h"
 #include "debug.h"
+#include "gdt.h"
 
 int kern_entry()
 {
 	init_debug();
+	init_gdt();
 
 	console_clear();
-	int i = 0;
-	printk("test:%d",i);
 	printk("Hello World\n");
-	printk("Hello World2\n");
 
 	panic("test");
 
