@@ -17,11 +17,13 @@ typedef struct multiboot_t {
 	uint32_t shndx;
 	uint32_t mmap_length;
 	uint32_t mmap_addr;
-	uint32_t drives_length;
-	uint32_t drives_addr;
-	uint32_t config_table;
-	uint32_t boot_loader_name;
-	uint32_t apm_table;
+	
+	uint32_t drives_length; 	// 指出第一个驱动器结构的物理地址	
+	uint32_t drives_addr; 		// 指出第一个驱动器这个结构的大小
+	uint32_t config_table; 		// ROM 配置表
+	uint32_t boot_loader_name; 	// boot loader 的名字
+	uint32_t apm_table; 	    	// APM 表
+	uint32_t vbe_control_info;
 	uint32_t vbe_mode_info;
 	uint32_t vbe_mode;
 	uint32_t vbe_interface_seg;

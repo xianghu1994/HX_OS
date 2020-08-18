@@ -23,9 +23,9 @@ typedef struct elf_symbol_t {
 	uint32_t name;
 	uint32_t value;
 	uint32_t size;
-	uint32_t info;
-	uint32_t other;
-	uint32_t shndx;
+	uint8_t info;
+	uint8_t other;
+	uint16_t shndx;
 } __attribute__((packed)) elf_symbol_t;
 
 typedef struct elf_t {
