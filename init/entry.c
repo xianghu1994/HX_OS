@@ -6,6 +6,7 @@ int kern_entry()
 {
 	init_debug();
 	init_gdt();
+	init_idt();
 
 	console_clear();
 	printk("Hello World\n");
