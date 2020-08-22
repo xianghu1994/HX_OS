@@ -41,10 +41,18 @@ static inline char *strcpy(char *dest, const char *src)
 	return tmp;
 }
 
-static inline char *strcat()
+static inline char *strcat(char *dest, const char *src)
 {
+	char *cp = dest;
 
-	return NULL;
+	while (*cp) {
+	      cp++;
+	}
+
+	while ((*cp++ = *src++))
+	      ;
+
+	return dest;
 }
 
 static inline int strlen(const char *src)
@@ -54,6 +62,6 @@ static inline int strlen(const char *src)
 	while(*eos++)
 		;
 
-	return (eos - src + 1);
+	return (eos - src - 1);
 }
 #endif
